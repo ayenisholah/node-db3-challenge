@@ -19,4 +19,8 @@ function findById(id) {
   return db('schemes').where({ id: Number(id) });
 }
 
- 
+function add(scheme) {
+  return db('scheme')
+    .insert(scheme)
+    .then(ids => ({ id: id[0] }));
+}
