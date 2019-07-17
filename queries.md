@@ -12,6 +12,12 @@ on Orders.ShipperID = Orders.ShipperID
 where OrderDate <= '1997-01-09';
 
 ##Quantities placed on order 10251. Sort by ProductName. Shows 3 records.
+SELECT ProductName, Quantity, OrderID 
+FROM OrderDetails
+JOIN Products
+ON OrderDetails.ProductID = Products.ProductID
+WHERE OrderID = 10251
+;
 
 ### Display the OrderID, CustomerName and the employee's LastName for every order. All columns should be labeled clearly. Displays 196 records.
 
