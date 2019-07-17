@@ -20,7 +20,13 @@ function findById(id) {
 }
 
 function add(scheme) {
-  return db('scheme')
+  return db('schemes')
     .insert(scheme)
     .then(ids => ({ id: id[0] }));
+}
+
+function update(changes, id) {
+  return db('schemes')
+    .where('id', Number(id))
+    .update(changes);
 }
